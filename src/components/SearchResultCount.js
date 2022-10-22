@@ -1,4 +1,4 @@
-export default function SearchResultCount({searchkeyDynamic,searchTypeDynamic})
+export default function SearchResultCount({searchkeyDynamic,searchTypeDynamic,searchResultCount})
 {
     const styles = {
         fontStyle: 'italic',
@@ -13,7 +13,7 @@ export default function SearchResultCount({searchkeyDynamic,searchTypeDynamic})
             <span style={styles}> 
                 {searchkeyDynamic}                
              </span> 
-             <span>   in {searchTypeDynamic} : 0</span>
+             <span>   in {searchTypeDynamic} : {searchResultCount}</span>
         </div>
         <hr size="1" className="section2__line1 layout" />
     </div>

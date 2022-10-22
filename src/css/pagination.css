@@ -1,0 +1,12 @@
+
+.paginationlink
+{
+    
+    padding: 10px;
+    border: 1px;
+}
+.paginationlink.active
+{
+    margin: 0px;
+    padding: 10px;
+}

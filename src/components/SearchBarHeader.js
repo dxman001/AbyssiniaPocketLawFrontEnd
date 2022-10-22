@@ -2,7 +2,7 @@ import '../css/form-control.css';
 import Col from 'react-bootstrap/Col';
 import { useEffect } from "react";
 
-export default function SearchBarHeader({searchkeyDynamic,setSearchKeyDynamic,searchTypeDynamic,setSearchResult})
+export default function SearchBarHeader({searchkeyDynamic,setSearchKeyDynamic,searchTypeDynamic,setSearchResult,setSearchResultCount})
 {
     useEffect(() => 
     {      
@@ -26,8 +26,9 @@ export default function SearchBarHeader({searchkeyDynamic,setSearchKeyDynamic,se
             try 
             {
                 const response = await fetch(url);
-                const json = await response.json();
-                setSearchResult(json);
+                const jsonResponse = await response.json();
+                setSearchResult(jsonResponse.data);
+                setSearchResultCount(jsonResponse.count);
             } 
             catch (error) 
             {
@@ -37,6 +38,7 @@ export default function SearchBarHeader({searchkeyDynamic,setSearchKeyDynamic,se
         else
         {
             setSearchResult([]);
+            setSearchResultCount(0);
         }
         
     };

@@ -20,7 +20,8 @@ function HomePage()
             </SearchBarHome>
             <SearchSelectorHome 
                 searchType={searchType}
-                setsearchType={setsearchType}>
+                setsearchType={setsearchType}
+                setsearchKey={setsearchKey}>
             </SearchSelectorHome>  
             <Footer/>     
         </div>

@@ -12,6 +12,20 @@
     padding-top: 10px;
     padding-left: 30px;
     padding-right: 30px;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: rgba(144, 30, 34, 0.8);;
+    --bs-btn-hover-border-color: #901e22;
+    --bs-btn-focus-shadow-rgb: 144, 30, 34;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #901e22;
+    --bs-btn-active-border-color: #901e22;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #901e22;
+    --bs-btn-disabled-border-color: #901e22;
+  }
+  .btn-custom:hover{
+    box-shadow: 0 0 0 0.2rem rgba(144, 30, 34, 0.2);
   }
   .spacer-custom
   {

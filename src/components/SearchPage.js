@@ -7,6 +7,7 @@ export default function SearchPage()
 {
  
    const [searchResult,setSearchResult] = useState([]);
+   const [searchResultCount,setSearchResultCount] = useState(0);
    
    var {searchKey, searchType } = {
         searchKey:"",
@@ -31,12 +32,14 @@ export default function SearchPage()
                 searchTypeDynamic={searchTypeDynamic} 
                 setSearchTypeDynamic={setSearchTypeDynamic} 
                 searchResult={searchResult} 
-                setSearchResult={setSearchResult}>
+                setSearchResult={setSearchResult}
+                setSearchResultCount ={setSearchResultCount}>
             </Header>
             <SearchResult  
                 searchResult={searchResult}
                 searchkeyDynamic={searchkeyDynamic}
-                searchTypeDynamic={searchTypeDynamic} >
+                searchTypeDynamic={searchTypeDynamic}
+                searchResultCount={searchResultCount}>
             </SearchResult>
             <Footer/>
         </>

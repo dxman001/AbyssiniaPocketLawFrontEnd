@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import '../css/button.css'
-export default function SearchResultItem({resultItem})
+export default function CassationItem({resultItem})
 {
     const titleArray=resultItem.title.split('-');
     return(
@@ -18,23 +18,23 @@ export default function SearchResultItem({resultItem})
                 </h3>
                 <h5 className="section2__highlights1_box layout">
                     <div className="section2__highlights1">
-                        <span className="section2__highlights1_span0">Status:</span>
+                        <span className="section2__highlights1_span0">Volume : </span>
                         <span className="section2__highlights1_span1">
-                            {resultItem.status}
+                            {resultItem.volume}
                          </span>
                     </div>
                 </h5>
                 <h5 className="section2__highlights1_box layout1">
                     <div className="section2__highlights1">
-                        <span className="section2__highlights1_span0">Entry into Force:</span>
+                        <span className="section2__highlights1_span0">Decision : </span>
                         <span className="section2__highlights1_span1"> 
-                            {resultItem.entry}
+                            {resultItem.decision}
                         </span>
                     </div>
                 </h5>
                 <h5 className="section2__highlights1_box layout1">
                     <div className="section2__highlights1">
-                        <span className="section2__highlights1_span0">Category:</span>
+                        <span className="section2__highlights1_span0">Category : </span>
                         <span className="section2__highlights1_span1"> 
                              {resultItem.category}
                         </span>
@@ -42,9 +42,9 @@ export default function SearchResultItem({resultItem})
                 </h5>
                 <h5 className="section2__highlights1_box layout1">
                     <div className="section2__highlights1">
-                        <span className="section2__highlights1_span0">Jurisdiction:</span>
+                        <span className="section2__highlights1_span0">Given : </span>
                         <span className="section2__highlights1_span1"> 
-                            {resultItem.jurisdiction}
+                            {resultItem.given}
                         </span>
                     </div>
                 </h5>

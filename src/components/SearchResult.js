@@ -1,10 +1,12 @@
+import '../css/Search.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SearchResultCount from './SearchResultCount';
-import SearchResultItem from './SearchResultItem';
-import '../css/Search.css';
-export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDynamic})
+import LawItem from './LawItem';
+import CassationItem from './CassationItem';
+import Pagination from './Pagination';
+export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDynamic,searchResultCount})
 {
        return(
         <Container fluid>
@@ -14,14 +16,18 @@ export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDy
                         <div className="section2__flex layout2">
                             <SearchResultCount  
                                 searchkeyDynamic={searchkeyDynamic}
-                                searchTypeDynamic={searchTypeDynamic}>
+                                searchTypeDynamic={searchTypeDynamic}
+                                searchResultCount={searchResultCount}>
                             </SearchResultCount>
                               {
                                 searchResult.map((resultItem) => 
                                 {
-                                    return(<SearchResultItem key={resultItem.id} resultItem={resultItem} />  ); 
+                                   return searchTypeDynamic === "Laws" ?
+                                     (<LawItem key={resultItem.id} resultItem={resultItem} />) :                                   
+                                     (<CassationItem key={resultItem.id} resultItem={resultItem} />)
                                 })
-                             }                               
+                             }  
+                             <Pagination/>                             
                         </div>
                     </section>
                 </Col>

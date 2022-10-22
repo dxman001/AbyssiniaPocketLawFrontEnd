@@ -14,7 +14,8 @@ export default function Header(props)
         searchTypeDynamic,
         setSearchTypeDynamic,
         searchResult,
-        setSearchResult} = props;
+        setSearchResult,
+        setSearchResultCount} = props;
         
     return(
       <section className='section1__section1 layout'>
@@ -28,12 +29,16 @@ export default function Header(props)
                             setSearchKeyDynamic={setSearchKeyDynamic}
                             searchTypeDynamic={searchTypeDynamic} 
                             searchResult={searchResult}
-                            setSearchResult={setSearchResult}>
+                            setSearchResult={setSearchResult}
+                            setSearchResultCount={setSearchResultCount}>
                         </SearchBarHeader> 
                                                        
                         <SearchSelectorHeader  
                             searchType={searchTypeDynamic}
-                            setsearchType={setSearchTypeDynamic}>
+                            setsearchType={setSearchTypeDynamic}
+                            setSearchKeyDynamic={setSearchKeyDynamic}
+                            setSearchResult={setSearchResult}
+                            setSearchResultCount={setSearchResultCount}>
                         </SearchSelectorHeader>
                     </Row>
                 </Container>              
