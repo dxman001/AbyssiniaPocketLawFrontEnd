@@ -1,0 +1,12 @@
+.form-control:focus {
+    border-color: #901e22;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(144, 30, 34, 0.2);
+}
+.form-control:hover {
+    border-color: #901e22;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(144, 30, 34, 0.2);
+}
+ 
+

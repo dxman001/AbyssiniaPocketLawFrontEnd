@@ -1,0 +1,110 @@
+.main
+{
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.main.layout {
+    position: relative;
+    overflow:visible;
+  }
+.logo {
+  display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: center center;
+    object-position: center center;
+    max-width: 260px;
+    top: 50%;
+  }
+  
+  .logo.layout {
+    position: relative;
+    flex-grow: 1;
+    margin: 0px 0px 39px;
+    padding: auto;
+    top:50%;
+  }
+  .logo_spacer {
+    flex: 1 1 39px;
+  }
+
+  .search_wrapper {
+    position:relative;
+    flex-grow: 1;
+    top:50%;
+  }
+  
+  .search_icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 0px;
+    position: absolute;
+    box-sizing:border-box;
+    top:50%;
+    right:20px;
+    transform: translateY(-50%);
+    color: #901e22;
+  }
+  
+  .search_input {
+    height: 40px;
+    width: 100%;
+    box-sizing:border-box;
+    padding-left: 1.5rem;
+    border-radius: 25.5px 25.5px 25.5px 25.5px;
+    border: 1px solid #901e22;
+    font: 200 15px/1.2 "Inter", Helvetica, Arial, serif;    
+  }
+  .search_input2 {
+    height: 40px;
+    width: 100%;
+    box-sizing:border-box;
+    padding-left: 1.5rem;
+    border-radius: 25.5px 25.5px 25.5px 25.5px;
+    border: none;
+    font: 200 15px/1.2 "Inter", Helvetica, Arial, serif;
+    
+  }
+
+  .selection_wrapper {
+    display: flex;
+    position:relative;
+    flex-grow: 1;
+    top:50%;  
+    width: 100%; 
+    margin-bottom: 15px;
+  }
+  .btn-primary {
+   
+     height: 40px;
+     min-width: 80%;
+}
+ .header_divider_line {
+    background-color: #edab04;
+  }
+  
+  .header_divider_line.layout {
+    position: relative;
+    height: 2px;
+    margin: 19px 0px 0px;
+    
+  }
+  .dropdown_header
+{
+  display: flex;
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+  margin-left: 0px;
+  font: 200 10px/1.2 "Inter", Helvetica, Arial, serif;
+}
+.section1__flex.layout {
+  position: relative;
+  flex-grow: 1;
+  margin: -11px 0px 0px;
+}

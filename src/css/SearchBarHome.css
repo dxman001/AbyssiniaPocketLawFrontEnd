@@ -1,0 +1,77 @@
+.blocksearch {
+    display: flex;
+    border-radius: 25.5px 25.5px 25.5px 25.5px;
+    max-width: 100%;
+    padding-left: 0%;
+    min-width: 340px;
+  }
+  
+  .blocksearch.layout {
+    position: relative;
+    width: 48.06%;
+    margin: 20px auto 0px;
+  }
+
+  @media (max-width: 767px) {
+    .blocksearch.layout {
+      width: 55.24%;
+    }
+  }
+  @media (max-width: 575px) {
+    .blocksearch.layout {
+      width: 62.2%;
+    }
+  }
+  @media (max-width: 479px) {
+    .blocksearch.layout {
+      width: 68.69%;
+    }
+  }
+  @media (max-width: 383px) {
+    .blocksearch.layout {
+      width: 74.52%;
+    }
+  }
+
+.blocksearchInput {
+    display: flex;
+    border-radius: 25.5px 25.5px 25.5px 25.5px;
+    max-width: 100%;
+    border: 1px solid #901e22;
+    height: 42px;
+    color: #901e22;
+    font: 250 16px/1.2 "Inter", Helvetica, Arial, serif;
+    padding-left: 30px;
+    
+  }
+  .blocksearchButton {
+    background-color: #901e22;
+    display: flex;
+    border-radius: 25.5px 25.5px 25.5px 25.5px;
+    width: 100px;
+    border: 1px solid #901e22;
+    height: 42px;
+    --bs-btn-hover-color: rgba(144, 30, 34, 0.9);
+    --bs-btn-hover-bg: rgba(144, 30, 34, 0.8);;
+    --bs-btn-hover-border-color: #901e22;
+    --bs-btn-focus-shadow-rgb: 144, 30, 34;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #901e22;
+    --bs-btn-active-border-color: #901e22;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(144, 30, 34, 0.2);
+    --bs-btn-disabled-color: #7f8285;
+    --bs-btn-disabled-bg: #7f8285;
+    --bs-btn-disabled-border-color: #7f8285;
+    --bs-gradient: none;
+  }
+  .blocksearchButton:hover{
+    box-shadow: 0 0 0 0.2rem rgba(144, 30, 34, 0.2);
+  }
+  .blocksearchButtonText {
+    padding-top: 5px;   
+    color: whitesmoke; 
+    font: 200 15px/1.2 "Inter", Helvetica, Arial, serif;
+  }
+
+ 
+  
