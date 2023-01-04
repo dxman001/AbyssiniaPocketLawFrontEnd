@@ -2,19 +2,23 @@ import '../css/form-control.css';
 import Col from 'react-bootstrap/Col';
 import { useEffect } from "react";
 
-export default function SearchBarHeader({searchkeyDynamic,setSearchKeyDynamic,searchTypeDynamic,setSearchResult,setSearchResultCount})
+export default function SearchBarHeader({searchkeyDynamic,setSearchKeyDynamic,searchTypeDynamic,setSearchResult,setSearchResultCount,pageIndex,setPageIndex})
 {
+
     useEffect(() => 
     {      
-        const url = `https://localhost:7290/api/Search?searchKey=${searchkeyDynamic}&searchType=${searchTypeDynamic}`;            
+        const url = `https://localhost:7290/api/Search?searchKey=${searchkeyDynamic}&searchType=${searchTypeDynamic}&pageIndex=${pageIndex}`;            
         fetchData(url);
     }, []);
 
     const handelChange = (e) =>
-    {
-        setSearchKeyDynamic(e.target.value);
+    {      
+        setSearchResult([]);
+        setSearchResultCount(0);
+        setSearchKeyDynamic(e.target.value);  
+        setPageIndex(0);   
         if(e.target.value.length > 2)
-        {   const url = `https://localhost:7290/api/Search?searchKey=${e.target.value}&searchType=${searchTypeDynamic}`;   
+        {   const url = `https://localhost:7290/api/Search?searchKey=${e.target.value}&searchType=${searchTypeDynamic}&pageIndex=${0}`;   
             fetchData(url);
         }     
     }

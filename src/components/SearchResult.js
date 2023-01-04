@@ -6,8 +6,9 @@ import SearchResultCount from './SearchResultCount';
 import LawItem from './LawItem';
 import CassationItem from './CassationItem';
 import Pagination from './Pagination';
-export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDynamic,searchResultCount})
+export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDynamic,searchResultCount,pageIndex,setPageIndex,setSearchResult,setSearchResultCount})
 {
+
        return(
         <Container fluid>
             <Row>   
@@ -27,7 +28,15 @@ export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDy
                                      (<CassationItem key={resultItem.id} resultItem={resultItem} />)
                                 })
                              }  
-                             <Pagination/>                             
+                           <Pagination 
+                            searchResultCount={searchResultCount}
+                            pageIndex ={pageIndex}
+                            setPageIndex ={setPageIndex}
+                            searchkeyDynamic={searchkeyDynamic}
+                            searchTypeDynamic={searchTypeDynamic}
+                            setSearchResult={setSearchResult}
+                            setSearchResultCount ={setSearchResultCount}>
+                            </Pagination>                        
                         </div>
                     </section>
                 </Col>

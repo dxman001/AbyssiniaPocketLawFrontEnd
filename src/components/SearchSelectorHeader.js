@@ -1,6 +1,6 @@
 import Col from 'react-bootstrap/Col';
 import DropDownCombo from './DropDownCombo';
-export default function SearchSelectorHeader({searchType,setsearchType,setSearchKeyDynamic,setSearchResult,setSearchResultCount})
+export default function SearchSelectorHeader({searchType,setsearchType,setSearchKeyDynamic,setSearchResult,setSearchResultCount,setPageIndex})
 {
     return(
         <Col lg={true} md={4}>
@@ -11,7 +11,8 @@ export default function SearchSelectorHeader({searchType,setsearchType,setSearch
                     classType="dropdown_header"
                     setSearchKeyDynamic={setSearchKeyDynamic}
                     setSearchResult={setSearchResult}
-                    setSearchResultCount={setSearchResultCount}>
+                    setSearchResultCount={setSearchResultCount}
+                    setPageIndex={setPageIndex}>
                 </DropDownCombo>
                 
            </div>                               

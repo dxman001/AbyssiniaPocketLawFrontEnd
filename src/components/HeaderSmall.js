@@ -3,10 +3,9 @@ import '../css/Search.css';
 import '../css/Header.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import HeaderLogo from './HeaderLogo';
 import SearchBarHeader from './SearchBarHeader';
-import SearchSelectorHeader from './SearchSelectorHeader';
-export default function Header(props)
+
+export default function HeaderSmall(props)
 {
     const {
         searchkeyDynamic,
@@ -16,17 +15,14 @@ export default function Header(props)
         searchResult,
         setSearchResult,
         setSearchResultCount,
-        pageIndex,
-        setPageIndex} = props;
+        pageIndex} = props;
         
     return(
       <section className='section1__section1 layout'>
         <div className='section1__flex layout'>
-            <div className='section1__flex1 layout'>
-            
+            <div className='section1__flex1 layout'>           
                  <Container fluid='md'>
-                    <Row>                      
-                        <HeaderLogo/>
+                    <Row>                                            
                         <SearchBarHeader 
                             searchkeyDynamic={searchkeyDynamic} 
                             setSearchKeyDynamic={setSearchKeyDynamic}
@@ -34,18 +30,8 @@ export default function Header(props)
                             searchResult={searchResult}
                             setSearchResult={setSearchResult}
                             setSearchResultCount={setSearchResultCount}
-                            pageIndex ={pageIndex}
-                            setPageIndex ={setPageIndex}>
-                        </SearchBarHeader> 
-                                                       
-                        <SearchSelectorHeader  
-                            searchType={searchTypeDynamic}
-                            setsearchType={setSearchTypeDynamic}
-                            setSearchKeyDynamic={setSearchKeyDynamic}
-                            setSearchResult={setSearchResult}
-                            setSearchResultCount={setSearchResultCount}
-                            setPageIndex ={setPageIndex}>
-                        </SearchSelectorHeader>
+                            pageIndex ={pageIndex}>
+                        </SearchBarHeader>                                                        
                      </Row>
                 </Container>              
             </div>
