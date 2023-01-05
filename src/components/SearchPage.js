@@ -4,6 +4,8 @@ import Footer  from "./Footer";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import React from 'react';
+import FetchData from "../services/FetchData";
+import { useEffect } from "react";
 export default function SearchPage()
 {
  
@@ -24,7 +26,11 @@ export default function SearchPage()
     }
     const [searchkeyDynamic,setSearchKeyDynamic] = useState(searchKey);
     const [searchTypeDynamic,setSearchTypeDynamic] = useState(searchType);
-   
+
+    useEffect(() => 
+    {      
+        FetchData(searchkeyDynamic,searchTypeDynamic,pageIndex,setSearchResult,setSearchResultCount);
+    }, []);
 
    return(
         <>
