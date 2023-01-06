@@ -25,7 +25,7 @@ export default function SearchBarHeader({searchkeyDynamic,setSearchKeyDynamic,se
                     type="text" 
                     value={searchkeyDynamic} 
                     className="search_input form-control" 
-                    placeholder='Search Here' 
+                    placeholder={`Search ${searchTypeDynamic} Here`} 
                     onChange={handelChange}/>                                   
                 <div className="search_icon">
                     <li className='fa fa-search'></li>

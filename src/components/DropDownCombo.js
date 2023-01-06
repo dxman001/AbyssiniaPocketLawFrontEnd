@@ -12,7 +12,7 @@ export default function DropDownCombo({searchType,setsearchType,classType,setSea
             {
                 setSearchResult([]);
                 setSearchResultCount(0);
-                setPageIndex(1);
+                setPageIndex(0);
             }
         }            
     }

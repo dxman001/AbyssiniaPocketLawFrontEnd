@@ -638,7 +638,7 @@
 .section2__flex1 {
   display: flex;
 }
-@media (max-width: 767px) {
+@media (max-width: 200px) {
   .section2__flex1 {
     flex-wrap: wrap;
     align-content: flex-start;
@@ -749,7 +749,7 @@
 .section2__flex__spacer1 {
   flex: 0 1 22px;
 }
-@media (max-width: 767px) {
+@media (max-width: 200px) {
   .section2__flex__spacer1 {
     display: none;
   }

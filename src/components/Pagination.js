@@ -16,6 +16,7 @@ export default function Pagination({searchResultCount,pageIndex,setPageIndex,sea
     {       
       setPageIndex(event.selected);
       FetchData(searchkeyDynamic,searchTypeDynamic,event.selected,setSearchResult,setSearchResultCount);
+      window.scrollTo(0, 0);
     }
 
 

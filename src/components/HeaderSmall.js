@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/Search.css';
 import '../css/Header.css';
+import '../css/Header-small.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import SearchBarHeader from './SearchBarHeader';
+import SearchBarHeaderSmall from './SearchBarHeaderSmall';
 
 export default function HeaderSmall(props)
 {
@@ -15,28 +16,30 @@ export default function HeaderSmall(props)
         searchResult,
         setSearchResult,
         setSearchResultCount,
-        pageIndex} = props;
+        pageIndex,
+        setPageIndex} = props;
         
     return(
-      <section className='section1__section1 layout'>
-        <div className='section1__flex layout'>
-            <div className='section1__flex1 layout'>           
+        <section className="section2__section2 layout">
+            <div className="section2__flex layout2_small">
+                    
                  <Container fluid='md'>
                     <Row>                                            
-                        <SearchBarHeader 
+                        <SearchBarHeaderSmall 
                             searchkeyDynamic={searchkeyDynamic} 
                             setSearchKeyDynamic={setSearchKeyDynamic}
                             searchTypeDynamic={searchTypeDynamic} 
+                            setSearchTypeDynamic={setSearchTypeDynamic}
                             searchResult={searchResult}
                             setSearchResult={setSearchResult}
                             setSearchResultCount={setSearchResultCount}
-                            pageIndex ={pageIndex}>
-                        </SearchBarHeader>                                                        
+                            pageIndex ={pageIndex}
+                            setPageIndex ={setPageIndex}>
+                        </SearchBarHeaderSmall>                                                        
                      </Row>
                 </Container>              
             </div>
-            <hr size="1" className="header_divider_line layout" />            
-        </div>          
+            <hr size="1" className="header_divider_line layout" />                              
     </section>
     );
 }

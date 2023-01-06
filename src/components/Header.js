@@ -20,11 +20,9 @@ export default function Header(props)
         setPageIndex} = props;
         
     return(
-      <section className='section1__section1 layout'>
-        <div className='section1__flex layout'>
-            <div className='section1__flex1 layout'>
-            
-                 <Container fluid='md'>
+        <section className="section2__section2 layout">
+        <div className="section2__flex layout2_main">
+                 <Container fluid>
                     <Row>                      
                         <HeaderLogo/>
                         <SearchBarHeader 
@@ -50,7 +48,7 @@ export default function Header(props)
                 </Container>              
             </div>
             <hr size="1" className="header_divider_line layout" />            
-        </div>          
+                
     </section>
     );
 }

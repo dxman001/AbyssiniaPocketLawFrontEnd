@@ -71,7 +71,8 @@ export default function SearchPageMultiScreen()
                     searchResult={searchResult} 
                     setSearchResult={setSearchResult}
                     setSearchResultCount ={setSearchResultCount}
-                    pageIndex ={pageIndex}>
+                    pageIndex ={pageIndex}
+                    setPageIndex ={setPageIndex}>
                 </Header>}
             </Fragment>
           )}

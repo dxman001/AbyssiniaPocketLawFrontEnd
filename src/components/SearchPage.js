@@ -1,11 +1,13 @@
 import Header from "./Header";
+import HeaderMedium from "./HeaderMedium";
+import HeaderSmall from "./HeaderSmall";
 import SearchResult from "./SearchResult";
 import Footer  from "./Footer";
-import { useLocation } from "react-router-dom";
-import { useState } from "react";
-import React from 'react';
+import React, { Fragment,useState,useEffect } from 'react';
+import Media from 'react-media';
 import FetchData from "../services/FetchData";
-import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 export default function SearchPage()
 {
  
@@ -34,17 +36,54 @@ export default function SearchPage()
 
    return(
         <>
-        <Header 
-            searchkeyDynamic={searchkeyDynamic} 
-            setSearchKeyDynamic={setSearchKeyDynamic}
-            searchTypeDynamic={searchTypeDynamic} 
-            setSearchTypeDynamic={setSearchTypeDynamic} 
-            searchResult={searchResult} 
-            setSearchResult={setSearchResult}
-            setSearchResultCount ={setSearchResultCount}
-            pageIndex ={pageIndex}
-            setPageIndex ={setPageIndex}>
-         </Header>
+        <Media queries={{
+          small: "(max-width: 799px)",
+          medium: "(min-width: 800px) and (max-width: 1199px)",
+          large: "(min-width: 1200px)"
+        }}>
+          {matches => (
+            <Fragment>
+                {matches.small && 
+                <HeaderSmall
+                    searchkeyDynamic={searchkeyDynamic} 
+                    setSearchKeyDynamic={setSearchKeyDynamic}
+                    searchTypeDynamic={searchTypeDynamic} 
+                    setSearchTypeDynamic={setSearchTypeDynamic} 
+                    searchResult={searchResult} 
+                    setSearchResult={setSearchResult}
+                    setSearchResultCount ={setSearchResultCount}
+                    pageIndex ={pageIndex}
+                    setPageIndex ={setPageIndex}>
+                </HeaderSmall>
+                }
+                {matches.medium &&  
+                <HeaderSmall 
+                    searchkeyDynamic={searchkeyDynamic} 
+                    setSearchKeyDynamic={setSearchKeyDynamic}
+                    searchTypeDynamic={searchTypeDynamic} 
+                    setSearchTypeDynamic={setSearchTypeDynamic} 
+                    searchResult={searchResult} 
+                    setSearchResult={setSearchResult}
+                    setSearchResultCount ={setSearchResultCount}
+                    pageIndex ={pageIndex}
+                    setPageIndex ={setPageIndex}>
+                </HeaderSmall>
+                }
+                {matches.large &&  
+                <Header 
+                    searchkeyDynamic={searchkeyDynamic} 
+                    setSearchKeyDynamic={setSearchKeyDynamic}
+                    searchTypeDynamic={searchTypeDynamic} 
+                    setSearchTypeDynamic={setSearchTypeDynamic} 
+                    searchResult={searchResult} 
+                    setSearchResult={setSearchResult}
+                    setSearchResultCount ={setSearchResultCount}
+                    pageIndex ={pageIndex}
+                    setPageIndex ={setPageIndex}>
+                </Header>}
+            </Fragment>
+          )}
+        </Media>
            
         <SearchResult  
             searchResult={searchResult}

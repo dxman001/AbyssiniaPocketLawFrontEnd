@@ -1,8 +1,9 @@
-import Button from 'react-bootstrap/Button';
-import '../css/button.css'
+import '../css/button.css';
+import ViewDownloadFile from './ViewDownloadFile';
 export default function CassationItem({resultItem})
 {
     const titleArray=resultItem.title.split('-');
+   
     return(
         <div className="section2__flex layout1">
             <div className="section2__flex layout">
@@ -47,23 +48,10 @@ export default function CassationItem({resultItem})
                             {resultItem.given}
                         </span>
                     </div>
-                </h5>
-                
-                <div class="section2__flex1 layout">
-                    <Button className='btn-custom'  variant="outline-primary" id="search">
-                            Download
-                         <div className='spacer-custom'>
-                            <li className='fa fa-download'> </li>
-                         </div>
-                   </Button>
-                    <div class="spacer section2__flex__spacer1"></div>
-                    <Button className='btn-custom'  variant="outline-primary" id="search">
-                            View
-                         <div className='spacer-custom'>
-                            <li className='fa fa-eye'> </li>
-                         </div>
-                   </Button>
-                </div>
+                </h5>               
+                <ViewDownloadFile
+                    downloadUrl={resultItem.download}>
+                </ViewDownloadFile>
                 <hr size="1" className="section2__line1 layout1" />
             </div>              
         </div>  
