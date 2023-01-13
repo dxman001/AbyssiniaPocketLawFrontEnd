@@ -17,7 +17,10 @@ export default function Header(props)
         setSearchResult,
         setSearchResultCount,
         pageIndex,
-        setPageIndex} = props;
+        setPageIndex,
+        setLoading,
+        setIsSuccess,
+        setMessage} = props;
         
     return(
         <section className="section2__section2 layout">
@@ -33,7 +36,10 @@ export default function Header(props)
                             setSearchResult={setSearchResult}
                             setSearchResultCount={setSearchResultCount}
                             pageIndex ={pageIndex}
-                            setPageIndex ={setPageIndex}>
+                            setPageIndex ={setPageIndex}
+                            setLoading={setLoading}
+                            setIsSuccess={setIsSuccess}
+                            setMessage={setMessage}>
                         </SearchBarHeader> 
                                                        
                         <SearchSelectorHeader  
@@ -42,7 +48,10 @@ export default function Header(props)
                             setSearchKeyDynamic={setSearchKeyDynamic}
                             setSearchResult={setSearchResult}
                             setSearchResultCount={setSearchResultCount}
-                            setPageIndex ={setPageIndex}>
+                            setPageIndex ={setPageIndex}
+                            setLoading={setLoading}
+                            setIsSuccess={setIsSuccess}
+                            setMessage={setMessage}>
                         </SearchSelectorHeader>
                      </Row>
                 </Container>              

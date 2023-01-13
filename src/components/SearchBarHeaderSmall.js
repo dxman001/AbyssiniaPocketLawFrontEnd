@@ -3,7 +3,7 @@ import '../css/Header-small.css';
 import Col from 'react-bootstrap/Col';
 import FetchData from '../services/FetchData';
 import Dropdown from 'react-bootstrap/Dropdown';
-export default function SearchBarHeaderSmall({searchkeyDynamic,setSearchKeyDynamic,searchTypeDynamic,setSearchTypeDynamic,setSearchResult,setSearchResultCount,pageIndex,setPageIndex})
+export default function SearchBarHeaderSmall({searchkeyDynamic,setSearchKeyDynamic,searchTypeDynamic,setSearchTypeDynamic,setSearchResult,setSearchResultCount,pageIndex,setPageIndex,setLoading,setIsSuccess,setMessage})
 {
 
     const handelChange = (e) =>
@@ -11,10 +11,13 @@ export default function SearchBarHeaderSmall({searchkeyDynamic,setSearchKeyDynam
         setSearchResult([]);
         setSearchResultCount(0);
         setSearchKeyDynamic(e.target.value);  
-        setPageIndex(0);   
+        setPageIndex(0);  
+        setLoading(false);
+        setIsSuccess(true);
+        setMessage("");
         if(e.target.value.length > 2)
         {   
-            FetchData(e.target.value,searchTypeDynamic,0,setSearchResult,setSearchResultCount);
+            FetchData(e.target.value,searchTypeDynamic,0,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage);
         }     
     }
     const handleSelect = (e) => 
@@ -26,7 +29,10 @@ export default function SearchBarHeaderSmall({searchkeyDynamic,setSearchKeyDynam
             setSearchKeyDynamic("");
             setSearchResult([]);
             setSearchResultCount(0);
-            setPageIndex(1);            
+            setPageIndex(0);  
+            setLoading(false);   
+            setIsSuccess(true);
+            setMessage("");       
         }            
     }
 

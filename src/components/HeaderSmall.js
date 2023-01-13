@@ -17,7 +17,10 @@ export default function HeaderSmall(props)
         setSearchResult,
         setSearchResultCount,
         pageIndex,
-        setPageIndex} = props;
+        setPageIndex,
+        setLoading,
+        setIsSuccess,
+        setMessage} = props;
         
     return(
         <section className="section2__section2 layout">
@@ -34,7 +37,10 @@ export default function HeaderSmall(props)
                             setSearchResult={setSearchResult}
                             setSearchResultCount={setSearchResultCount}
                             pageIndex ={pageIndex}
-                            setPageIndex ={setPageIndex}>
+                            setPageIndex ={setPageIndex}
+                            setLoading={setLoading}
+                            setIsSuccess={setIsSuccess}
+                            setMessage={setMessage}>
                         </SearchBarHeaderSmall>                                                        
                      </Row>
                 </Container>              

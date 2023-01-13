@@ -6,12 +6,15 @@ import SearchResultCount from './SearchResultCount';
 import LawItem from './LawItem';
 import CassationItem from './CassationItem';
 import Pagination from './Pagination';
-export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDynamic,searchResultCount,pageIndex,setPageIndex,setSearchResult,setSearchResultCount})
-{
+import ErrorMessage from './ErrorMessage';
 
-       return(
+export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDynamic,searchResultCount,pageIndex,setPageIndex,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage,isSuccess,message})
+{
+      return(
         <Container fluid>
-            <Row>   
+            <Row>  
+                
+                
                 <Col lg={false} md={12}>
                     <section className="section2__section2 layout">
                         <div className="section2__flex layout2">
@@ -20,14 +23,18 @@ export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDy
                                 searchTypeDynamic={searchTypeDynamic}
                                 searchResultCount={searchResultCount}>
                             </SearchResultCount>
-                              {
+                              
+                              {  
+                              isSuccess?                                                   
                                 searchResult.map((resultItem) => 
                                 {
                                    return searchTypeDynamic === "Laws" ?
                                      (<LawItem key={resultItem.id} resultItem={resultItem} />) :                                   
                                      (<CassationItem key={resultItem.id} resultItem={resultItem} />)
-                                })
-                             }  
+                                })  
+                                :<ErrorMessage message={message}/>                                         
+                              }  
+                            
                            <Pagination 
                             searchResultCount={searchResultCount}
                             pageIndex ={pageIndex}
@@ -35,12 +42,16 @@ export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDy
                             searchkeyDynamic={searchkeyDynamic}
                             searchTypeDynamic={searchTypeDynamic}
                             setSearchResult={setSearchResult}
-                            setSearchResultCount ={setSearchResultCount}>
+                            setSearchResultCount ={setSearchResultCount}
+                            setLoading={setLoading}
+                            setIsSuccess={setIsSuccess}
+                            setMessage={setMessage}>
                             </Pagination>                        
                         </div>
                     </section>
                 </Col>
             </Row>
         </Container>  
+        
     );
 }

@@ -1,20 +1,22 @@
 import Header from "./Header";
-import HeaderMedium from "./HeaderMedium";
 import HeaderSmall from "./HeaderSmall";
 import SearchResult from "./SearchResult";
 import Footer  from "./Footer";
-import React, { Fragment,useState,useEffect } from 'react';
+import React, { Fragment,useState,useEffect} from 'react';
 import Media from 'react-media';
 import FetchData from "../services/FetchData";
 import { useLocation } from "react-router-dom";
-
+import LoadingSpinner from "./LoadingSpinner";
 export default function SearchPage()
 {
  
    const [searchResult,setSearchResult] = useState([]);
    const [searchResultCount,setSearchResultCount] = useState(0);
    const [pageIndex,setPageIndex] = useState(0);
-
+   const [loading,setLoading] = useState(false);
+   const [isSuccess,setIsSuccess] = useState(true);
+   const [message,setMessage] = useState("");
+  
    var {searchKey, searchType } = {
         searchKey:"",
         searchType: "Laws"
@@ -31,7 +33,7 @@ export default function SearchPage()
 
     useEffect(() => 
     {      
-        FetchData(searchkeyDynamic,searchTypeDynamic,pageIndex,setSearchResult,setSearchResultCount);
+        FetchData(searchkeyDynamic,searchTypeDynamic,pageIndex,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage);
     }, []);
 
    return(
@@ -53,7 +55,10 @@ export default function SearchPage()
                     setSearchResult={setSearchResult}
                     setSearchResultCount ={setSearchResultCount}
                     pageIndex ={pageIndex}
-                    setPageIndex ={setPageIndex}>
+                    setPageIndex ={setPageIndex}
+                    setLoading={setLoading}
+                    setIsSuccess={setIsSuccess}
+                    setMessage={setMessage}>
                 </HeaderSmall>
                 }
                 {matches.medium &&  
@@ -66,7 +71,10 @@ export default function SearchPage()
                     setSearchResult={setSearchResult}
                     setSearchResultCount ={setSearchResultCount}
                     pageIndex ={pageIndex}
-                    setPageIndex ={setPageIndex}>
+                    setPageIndex ={setPageIndex}
+                    setLoading={setLoading}
+                    setIsSuccess={setIsSuccess}
+                    setMessage={setMessage}>
                 </HeaderSmall>
                 }
                 {matches.large &&  
@@ -79,12 +87,18 @@ export default function SearchPage()
                     setSearchResult={setSearchResult}
                     setSearchResultCount ={setSearchResultCount}
                     pageIndex ={pageIndex}
-                    setPageIndex ={setPageIndex}>
+                    setPageIndex ={setPageIndex}
+                    setLoading={setLoading}
+                    setIsSuccess={setIsSuccess}
+                    setMessage={setMessage}>
                 </Header>}
             </Fragment>
           )}
         </Media>
-           
+        { 
+        loading?
+        <LoadingSpinner loading={loading}/>       
+         :
         <SearchResult  
             searchResult={searchResult}
             searchkeyDynamic={searchkeyDynamic}
@@ -94,9 +108,14 @@ export default function SearchPage()
             setPageIndex ={setPageIndex}
             setSearchResult={setSearchResult}
             setSearchResultCount ={setSearchResultCount}
+            setLoading={setLoading}
+            setIsSuccess={setIsSuccess}
+            setMessage={setMessage}
+            isSuccess={isSuccess}
+            message={message}
             >
         </SearchResult>
-        
+        }
         <Footer/>
         </>
     )

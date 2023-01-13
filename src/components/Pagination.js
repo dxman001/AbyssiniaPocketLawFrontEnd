@@ -2,7 +2,7 @@ import ReactPaginate from 'react-paginate';
 import '../css/pagination.css'
 import FetchData from '../services/FetchData';
 import { useEffect } from 'react';
-export default function Pagination({searchResultCount,pageIndex,setPageIndex,searchkeyDynamic,searchTypeDynamic,setSearchResult,setSearchResultCount})
+export default function Pagination({searchResultCount,pageIndex,setPageIndex,searchkeyDynamic,searchTypeDynamic,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage})
 {
     const itemsPerPage = 20;
     const pageCount = Math.ceil(searchResultCount/itemsPerPage);
@@ -14,8 +14,10 @@ export default function Pagination({searchResultCount,pageIndex,setPageIndex,sea
 
     const handlePageClick = (event) =>
     {       
+      setIsSuccess(true);
+      setMessage("");
       setPageIndex(event.selected);
-      FetchData(searchkeyDynamic,searchTypeDynamic,event.selected,setSearchResult,setSearchResultCount);
+      FetchData(searchkeyDynamic,searchTypeDynamic,event.selected,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage);
       window.scrollTo(0, 0);
     }
 

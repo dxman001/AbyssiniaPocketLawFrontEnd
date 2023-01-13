@@ -14,6 +14,11 @@ export default class FileHandler
     DownLoadFile = () => 
     {
         axios.get(this.url, {
+            headers: {
+                'Access-Control-Allow-Headers':'*',
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+              },
             responseType: 'blob',
           })
           .then((res) => {
