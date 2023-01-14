@@ -20,7 +20,7 @@ class App extends Component {
     return(
     <Router>
        <Routes>
-        <Route path='/' element={<HomePage/>} exact/>
+        <Route path='*' element={<HomePage/>} exact/>
         <Route path='/Search' element={<SearchPage/>}/>
        </Routes>     
     </Router>   
