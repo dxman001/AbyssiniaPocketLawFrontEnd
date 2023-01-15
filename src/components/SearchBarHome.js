@@ -5,13 +5,14 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useNavigate } from 'react-router-dom';
 import '../css/form-control.css'
+
 export default function SearchBarHome({searchKey,setsearchKey,searchType})
 {
     const navigate = useNavigate();
     const handelChange = (e) => setsearchKey(e.target.value); 
     const submitSearch = () =>    
         searchKey === "" 
-        ? alert("Empty string search is not allowed.") 
+        ? alert("please type a search key text in the searchbar.") 
         : navigate('/Search', { state: { searchKey: searchKey, searchType: searchType } });
            
     return(
@@ -26,6 +27,7 @@ export default function SearchBarHome({searchKey,setsearchKey,searchType})
                         value={searchKey}
                         type="text"
                         onChange={handelChange}
+                        required={true}
                     />
                     <Button 
                         className='blocksearchButton' 
@@ -35,9 +37,10 @@ export default function SearchBarHome({searchKey,setsearchKey,searchType})
                         <div className="blocksearchButtonText">
                             <li className='fa fa-search'> Search</li>
                         </div>
-                    </Button>
-                </InputGroup>
-            </div>
+                    </Button>                  
+                </InputGroup>               
+            </div>   
+                
        </div>
     );
 }
