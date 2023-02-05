@@ -21,7 +21,7 @@ class App extends Component {
     <Router>
        <Routes>
         <Route path='*' element={<HomePage/>} exact/>
-        <Route path='/Search' element={<SearchPage/>}/>
+        <Route path='/Search' element={<SearchPage/> } exact/>
        </Routes>     
     </Router>   
     

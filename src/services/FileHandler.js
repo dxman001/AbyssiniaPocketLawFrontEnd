@@ -14,20 +14,27 @@ export default class FileHandler
     DownLoadFile = () => 
     {
         axios.get(this.url, {
-            headers: {
-                'Access-Control-Allow-Headers':'*',
-                'Access-Control-Allow-Origin' : '*',
-                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-              },
             responseType: 'blob',
+            headers: {
+              'Access-Control-Allow-Headers':'*',
+              'Access-Control-Allow-Origin' : '*',
+              'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+            }
           })
           .then((res) => {
             fileDownload(res.data, this.fileName)
           })
     }
     
-     downloadFile2 = () => {
-        fetch(this.url).then(response => {
+     DownLoadFile2 = () => {
+        fetch(this.url,{ 
+          headers: {
+          'Access-Control-Allow-Headers':'*',
+          'Access-Control-Allow-Origin' : '*',
+          'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
+        },
+        mode:'no-cors'
+      }).then(response => {
             response.blob().then(blob => {
                 const fileURL = window.URL.createObjectURL(blob);
                 let alink = document.createElement('a');

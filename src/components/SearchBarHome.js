@@ -10,9 +10,14 @@ export default function SearchBarHome({searchKey,setsearchKey,searchType})
 {
     const navigate = useNavigate();
     const handelChange = (e) => setsearchKey(e.target.value); 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            submitSearch()
+        }
+      }
     const submitSearch = () =>    
         searchKey === "" 
-        ? alert("please type a search key text in the searchbar.") 
+        ? alert("Please type a search key text in the searchbar.") 
         : navigate('/Search', { state: { searchKey: searchKey, searchType: searchType } });
            
     return(
@@ -27,6 +32,7 @@ export default function SearchBarHome({searchKey,setsearchKey,searchType})
                         value={searchKey}
                         type="text"
                         onChange={handelChange}
+                        onKeyDown={handleKeyDown}
                         required={true}
                     />
                     <Button 

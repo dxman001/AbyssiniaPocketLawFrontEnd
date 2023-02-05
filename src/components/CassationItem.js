@@ -13,7 +13,7 @@ export default function CassationItem({resultItem})
                             {titleArray[0]}<br/>
                          </span>
                         <span className="section2__subtitle_span1">
-                            {titleArray[1]}
+                        {resultItem.title.substring(titleArray[0].length+1)}
                         </span>
                     </div>
                 </h3>

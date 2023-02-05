@@ -4,7 +4,7 @@ import ViewDownloadFile from './ViewDownloadFile';
 export default function LawItem({resultItem})
 {
     const titleArray=resultItem.title.split('-');
-     
+
     return(
         <div className="section2__flex layout1">
             <div className="section2__flex layout">
@@ -14,7 +14,7 @@ export default function LawItem({resultItem})
                             {titleArray[0]}<br/>
                          </span>
                         <span className="section2__subtitle_span1">
-                            {titleArray[1]}
+                            {resultItem.title.substring(titleArray[0].length+1)}
                         </span>
                     </div>
                 </h3>
