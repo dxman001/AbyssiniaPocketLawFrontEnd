@@ -1,0 +1,35 @@
+.negari-main
+{
+    position: fixed;
+    right: 2px;
+    top: 19px;
+    width: 70px;
+    height: 40px;
+    background: #901e22;
+    color: whitesmoke;
+    border-radius: 10px 10px 10px 10px;
+    font: 700 13px/1.2 "Inter", Helvetica, Arial, serif;
+    justify-content: center;
+}
+.negari-main.layout{
+  padding-top:12px;
+  align-self: center;
+  align-content: center;
+  padding-left: 5px;
+  justify-content: center;
+  text-decoration: none;
+   
+}
+.icon{
+    font: 700 13px/1.2 "Inter", Helvetica, Arial, serif;
+    justify-content: center;
+    margin-left: 4px;
+    color: #c39c3b;
+  }
+  .negari-main:hover{
+    box-shadow: 0 0 0 0.2rem rgba(144, 30, 34, 0.2);
+  }
+  .negari-main.layout:hover{
+    box-shadow: 0 0 0 0.2rem rgba(144, 30, 34, 0.2);
+    color: #c39c3b;
+  }

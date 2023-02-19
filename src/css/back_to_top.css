@@ -1,0 +1,23 @@
+.back-to-top
+{
+    z-index: 99999;
+}
+.back-to-top.sc-bdVaJa.fWohKN {
+    font-size: 20px !important;
+    position: fixed;
+    right: 0;
+    bottom: 40px !important;
+    margin: 30px;
+    border-radius: 50%;
+    border: none;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.4s opacity ease;
+    transition: 0.4s opacity ease;
+    cursor: pointer;
+    outline: none;
+    background: #901e22 !important;
+    color: #c39c3b !important;
+    width: 40px !important;
+    height: 40px !important;
+}

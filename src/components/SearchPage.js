@@ -7,6 +7,7 @@ import Media from 'react-media';
 import FetchData from "../services/FetchData";
 import { useLocation } from "react-router-dom";
 import LoadingSpinner from "./LoadingSpinner";
+
 export default function SearchPage()
 {
  
@@ -98,7 +99,7 @@ export default function SearchPage()
         { 
         loading?
         <LoadingSpinner loading={loading}/>       
-         :
+         : 
         <SearchResult  
             searchResult={searchResult}
             searchkeyDynamic={searchkeyDynamic}
@@ -114,8 +115,9 @@ export default function SearchPage()
             isSuccess={isSuccess}
             message={message}
             >
-        </SearchResult>
+        </SearchResult>         
         }
+             
         <Footer/>
         </>
     )

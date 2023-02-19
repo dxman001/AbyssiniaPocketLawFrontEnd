@@ -7,14 +7,13 @@ import LawItem from './LawItem';
 import CassationItem from './CassationItem';
 import Pagination from './Pagination';
 import ErrorMessage from './ErrorMessage';
-
+import BackToTopButton from "./BackToTopButton";
+import GoogleAd from './GoogleAd';
 export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDynamic,searchResultCount,pageIndex,setPageIndex,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage,isSuccess,message})
 {
       return(
         <Container fluid>
-            <Row>  
-                
-                
+            <Row>                 
                 <Col lg={false} md={12}>
                     <section className="section2__section2 layout">
                         <div className="section2__flex layout2">
@@ -23,15 +22,25 @@ export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDy
                                 searchTypeDynamic={searchTypeDynamic}
                                 searchResultCount={searchResultCount}>
                             </SearchResultCount>
-                              
+                            
                               {  
-                              isSuccess?                                                   
-                                searchResult.map((resultItem) => 
+                              isSuccess? 
+                               searchResult.map((resultItem,index) => 
                                 {
                                    return searchTypeDynamic === "Laws" ?
-                                     (<LawItem key={resultItem.id} resultItem={resultItem} />) :                                   
-                                     (<CassationItem key={resultItem.id} resultItem={resultItem} />)
-                                })  
+                                     (
+                                     <>
+                                     <LawItem key={resultItem.id} resultItem={resultItem} />
+                                     {(index)%6===0  ? <GoogleAd/> : <></>}
+                                     </>
+                                     ) :                                   
+                                     (
+                                     <>
+                                     <CassationItem key={resultItem.id} resultItem={resultItem} />
+                                     {(index)%6===0  ? <GoogleAd/> : <></>}
+                                     </>
+                                     )
+                                })                                                  
                                 :<ErrorMessage message={message}/>                                         
                               }  
                             
@@ -46,7 +55,8 @@ export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDy
                             setLoading={setLoading}
                             setIsSuccess={setIsSuccess}
                             setMessage={setMessage}>
-                            </Pagination>                        
+                            </Pagination>  
+                            <BackToTopButton/>                 
                         </div>
                     </section>
                 </Col>

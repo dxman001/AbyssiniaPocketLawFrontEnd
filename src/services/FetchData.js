@@ -1,7 +1,8 @@
 const FetchData = async (searchkeyDynamic,searchTypeDynamic,pageIndex,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage) =>
 {
+    //const url = `https://localhost:7290/api/Search?searchKey=${searchkeyDynamic}&searchType=${searchTypeDynamic}&pageIndex=${pageIndex}`;
     //const url = `http://likuworku-001-site1.atempurl.com/api/Search?searchKey=${searchkeyDynamic}&searchType=${searchTypeDynamic}&pageIndex=${pageIndex}`;
-    const url = `https://pocketlaw.abyssinialaw.com/AbyssiniaPocketLawSearch.php?searchKey=${searchkeyDynamic}&searchType=${searchTypeDynamic}&pageIndex=${pageIndex}`;
+    const url = `AbyssiniaPocketLawSearch.php?searchKey=${searchkeyDynamic}&searchType=${searchTypeDynamic}&pageIndex=${pageIndex}`;
     if(searchkeyDynamic.length > 0 && searchkeyDynamic !== "")
     {
         setLoading(true);

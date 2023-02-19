@@ -3,6 +3,7 @@ import '../css/Header-small.css';
 import Col from 'react-bootstrap/Col';
 import FetchData from '../services/FetchData';
 import Dropdown from 'react-bootstrap/Dropdown';
+import {Link} from 'react-router-dom';
 export default function SearchBarHeaderSmall({searchkeyDynamic,setSearchKeyDynamic,searchTypeDynamic,setSearchTypeDynamic,setSearchResult,setSearchResultCount,pageIndex,setPageIndex,setLoading,setIsSuccess,setMessage})
 {
 
@@ -40,7 +41,9 @@ export default function SearchBarHeaderSmall({searchkeyDynamic,setSearchKeyDynam
          <Col lg={false} md={12} >                                   
             <div className="search_wrapper_small">  
                 <div className="search_logo_small">
+                    <Link to='/home'>
                     <img src={require("../assets/abyssinia_law_logo_icon.png")} width="100" height="100" alt="" className="logo layout" />
+                    </Link>                   
                 </div>                  
                 <input 
                     id="searchValue"
@@ -64,8 +67,7 @@ export default function SearchBarHeaderSmall({searchkeyDynamic,setSearchKeyDynam
                         <Dropdown.Item  eventKey="Cassations">Search Cassations</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>                
-            </div>                                                                          
-                                                                           
+            </div>                                                                                                                                             
         </Col>
     );
 }
