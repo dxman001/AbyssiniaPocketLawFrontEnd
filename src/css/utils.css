@@ -18,3 +18,19 @@
     width: 100px;
     height: 100px; 
 }
+.no_result{
+    margin-top: 15px;
+    color: #901e22;
+    font: 400 18px/1.2 "Inter", Helvetica, Arial, serif;
+}
+.no_result_keyword{
+   
+    color: rgb(56, 54, 54);
+    font-style: italic;
+   
+    text-decoration: underline;
+}
+.no_result_list{
+    margin-top: 15px;
+    color: rgb(56, 54, 54);
+}

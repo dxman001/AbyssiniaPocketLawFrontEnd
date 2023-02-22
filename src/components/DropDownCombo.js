@@ -1,9 +1,9 @@
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-export default function DropDownCombo({searchType,setsearchType,classType,setSearchKeyDynamic,setSearchResult,setSearchResultCount,setPageIndex,setLoading,setIsSuccess,setMessage})
+export default function DropDownCombo({searchType,setsearchType,classType,setSearchKeyDynamic,setSearchResult,setSearchResultCount,setPageIndex,setLoading,setIsSuccess,setMessage,setIsNoResult})
 {
     const handleSelect = (e) => 
-    {
+    {      
         if(e !== searchType)
         {
             setsearchType(e);
@@ -11,6 +11,7 @@ export default function DropDownCombo({searchType,setsearchType,classType,setSea
             setLoading(false);
             setIsSuccess(true);
             setMessage("");
+            setIsNoResult(false);
             if(classType === "dropdown_header" )
             {
                 setSearchResult([]);

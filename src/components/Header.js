@@ -20,7 +20,8 @@ export default function Header(props)
         setPageIndex,
         setLoading,
         setIsSuccess,
-        setMessage} = props;
+        setMessage,
+        setIsNoResult} = props;
         
     return(
         <section className="section2__section2 layout">
@@ -39,7 +40,8 @@ export default function Header(props)
                             setPageIndex ={setPageIndex}
                             setLoading={setLoading}
                             setIsSuccess={setIsSuccess}
-                            setMessage={setMessage}>
+                            setMessage={setMessage}
+                            setIsNoResult={setIsNoResult}>
                         </SearchBarHeader> 
                                                        
                         <SearchSelectorHeader  
@@ -51,7 +53,8 @@ export default function Header(props)
                             setPageIndex ={setPageIndex}
                             setLoading={setLoading}
                             setIsSuccess={setIsSuccess}
-                            setMessage={setMessage}>
+                            setMessage={setMessage}
+                            setIsNoResult={setIsNoResult}>
                         </SearchSelectorHeader>
                      </Row>
                 </Container>              

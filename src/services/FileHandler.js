@@ -6,7 +6,7 @@ export default class FileHandler
     constructor(fileName) 
      { 
         this.fileName=fileName;
-        this.url= `https://abyssinialaw.com/lawandcassationDB/Admin/uploads/${this.fileName}`;       
+        this.url= `https://pocketadmin.abyssinialaw.com/uploads/${this.fileName}`;       
      }
 
     ViewFile= () => window.open(this.url);

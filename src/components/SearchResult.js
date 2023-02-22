@@ -9,7 +9,8 @@ import Pagination from './Pagination';
 import ErrorMessage from './ErrorMessage';
 import BackToTopButton from "./BackToTopButton";
 import GoogleAd from './GoogleAd';
-export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDynamic,searchResultCount,pageIndex,setPageIndex,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage,isSuccess,message})
+import NoResultFound from './NoResultFound';
+export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDynamic,searchResultCount,pageIndex,setPageIndex,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage,isSuccess,message,isNoResult,setIsNoResult})
 {
       return(
         <Container fluid>
@@ -24,7 +25,7 @@ export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDy
                             </SearchResultCount>
                             
                               {  
-                              isSuccess? 
+                              isSuccess && !isNoResult? 
                                searchResult.map((resultItem,index) => 
                                 {
                                    return searchTypeDynamic === "Laws" ?
@@ -41,7 +42,9 @@ export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDy
                                      </>
                                      )
                                 })                                                  
-                                :<ErrorMessage message={message}/>                                         
+                                :isNoResult 
+                                ? <NoResultFound searchkeyDynamic={searchkeyDynamic}/> 
+                                : <ErrorMessage message={message}/>                                         
                               }  
                             
                            <Pagination 

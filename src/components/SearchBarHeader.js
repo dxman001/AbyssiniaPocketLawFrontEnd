@@ -2,7 +2,7 @@ import '../css/form-control.css';
 import Col from 'react-bootstrap/Col';
 import FetchData from '../services/FetchData';
 
-export default function SearchBarHeader({searchkeyDynamic,setSearchKeyDynamic,searchTypeDynamic,setSearchResult,setSearchResultCount,pageIndex,setPageIndex,setLoading,setIsSuccess,setMessage})
+export default function SearchBarHeader({searchkeyDynamic,setSearchKeyDynamic,searchTypeDynamic,setSearchResult,setSearchResultCount,pageIndex,setPageIndex,setLoading,setIsSuccess,setMessage,setIsNoResult})
 {
 
     const handelChange = (e) =>
@@ -14,9 +14,10 @@ export default function SearchBarHeader({searchkeyDynamic,setSearchKeyDynamic,se
         setLoading(false);
         setIsSuccess(true);
         setMessage(""); 
+        setIsNoResult(false);
         if(e.target.value.length > 2)
         {   
-            FetchData(e.target.value,searchTypeDynamic,0,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage);
+            FetchData(e.target.value,searchTypeDynamic,0,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage,setIsNoResult);
         }     
     }
 

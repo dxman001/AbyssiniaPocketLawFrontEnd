@@ -17,6 +17,7 @@ export default function SearchPage()
    const [loading,setLoading] = useState(false);
    const [isSuccess,setIsSuccess] = useState(true);
    const [message,setMessage] = useState("");
+   const [isNoResult,setIsNoResult] = useState(false);
   
    var {searchKey, searchType } = {
         searchKey:"",
@@ -34,7 +35,7 @@ export default function SearchPage()
 
     useEffect(() => 
     {      
-        FetchData(searchkeyDynamic,searchTypeDynamic,pageIndex,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage);
+        FetchData(searchkeyDynamic,searchTypeDynamic,pageIndex,setSearchResult,setSearchResultCount,setLoading,setIsSuccess,setMessage,setIsNoResult);
     }, []);
 
    return(
@@ -59,7 +60,8 @@ export default function SearchPage()
                     setPageIndex ={setPageIndex}
                     setLoading={setLoading}
                     setIsSuccess={setIsSuccess}
-                    setMessage={setMessage}>
+                    setMessage={setMessage}
+                    setIsNoResult={setIsNoResult}>
                 </HeaderSmall>
                 }
                 {matches.medium &&  
@@ -75,7 +77,8 @@ export default function SearchPage()
                     setPageIndex ={setPageIndex}
                     setLoading={setLoading}
                     setIsSuccess={setIsSuccess}
-                    setMessage={setMessage}>
+                    setMessage={setMessage}
+                    setIsNoResult={setIsNoResult}>
                 </HeaderSmall>
                 }
                 {matches.large &&  
@@ -91,7 +94,8 @@ export default function SearchPage()
                     setPageIndex ={setPageIndex}
                     setLoading={setLoading}
                     setIsSuccess={setIsSuccess}
-                    setMessage={setMessage}>
+                    setMessage={setMessage}
+                    setIsNoResult={setIsNoResult}>
                 </Header>}
             </Fragment>
           )}
@@ -114,6 +118,8 @@ export default function SearchPage()
             setMessage={setMessage}
             isSuccess={isSuccess}
             message={message}
+            isNoResult={isNoResult}
+            setIsNoResult={setIsNoResult}
             >
         </SearchResult>         
         }
