@@ -8,7 +8,7 @@ export default function ViewDownloadFile({downloadUrl})
 
     return(
         <div class="section2__flex1 layout">
-            <Button onClick={()=>fileHandler.DownLoadFile2()} className='btn-custom'  variant="outline-primary" id="download">
+            <Button onClick={()=>fileHandler.DownLoadFile3()} className='btn-custom'  variant="outline-primary" id="download">
                 Download
                 <div className='spacer-custom'>
                     <li className='fa fa-download'> </li>

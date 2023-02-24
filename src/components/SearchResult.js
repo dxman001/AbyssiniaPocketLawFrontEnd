@@ -57,7 +57,8 @@ export default function SearchResult({searchResult,searchkeyDynamic,searchTypeDy
                             setSearchResultCount ={setSearchResultCount}
                             setLoading={setLoading}
                             setIsSuccess={setIsSuccess}
-                            setMessage={setMessage}>
+                            setMessage={setMessage}
+                            setIsNoResult={setIsNoResult}>
                             </Pagination>  
                             <BackToTopButton/>                 
                         </div>

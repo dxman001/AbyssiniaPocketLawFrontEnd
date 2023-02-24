@@ -44,5 +44,31 @@ export default class FileHandler
             })
         })
     }
+
+    DownLoadFile3 = () => {
+     
+      fetch(this.url, {
+       method: 'GET',
+       headers: {
+        'Content-Type': 'application/pdf',
+        'Access-Control-Allow-Headers':'*',
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
+       },
+        mode:'no-cors'
+      })
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(
+          new Blob([blob]),
+        );
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download',this.fileName);  
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+      });
+  }
 }
 
